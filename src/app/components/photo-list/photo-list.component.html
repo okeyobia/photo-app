@@ -1,1 +1,18 @@
-<p>photo-list works!</p>
+<div class="photo-list">
+  <div *ngFor="let photo of photos">
+    <div class="container">
+      <div class="row">
+        <div class="col-2"></div>
+        <div class="col-10">
+          <img
+            src="http://localhost:8080/images/{{ photo.photoName }}"
+            alt=""
+            class="center"
+            (click)="onSelect(photo)"
+            style="cursor: pointer;"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
