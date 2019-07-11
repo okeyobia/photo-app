@@ -6,11 +6,21 @@
     ><i class="material-icons">camera</i> PHOTOS</a
   >
   <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-    <li class="nav-item">
-      <a class="nav-link text-white" href="#">Home</a>
+    <li class="nav-item ">
+      <a
+        class="nav-link text-white"
+        [routerLink]="['/home']"
+        routerLinkActive="router-link-active"
+        >Home</a
+      >
     </li>
     <li class="nav-item">
-      <a class="nav-link text-white" href="#">My Album</a>
+      <a
+        class="nav-link text-white"
+        [routerLink]="['/my-album']"
+        routerLinkActive="router-link-active"
+        >My Album</a
+      >
     </li>
   </ul>
   <div class="my-2 my-lg-0">
@@ -19,7 +29,12 @@
         <a class="nav-link text-white" href="#">Sign Up</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="#">Login</a>
+        <a
+          class="nav-link text-white"
+          [routerLink]="['/login']"
+          routerLinkActive="router-link-active"
+          >Login</a
+        >
       </li>
     </ul>
   </div>

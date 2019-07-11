@@ -8,6 +8,8 @@ import { HomeComponent } from "./components/home/home.component";
 import { PhotoListComponent } from "./components/photo-list/photo-list.component";
 import { SidePanelComponent } from "./components/side-panel/side-panel.component";
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { MyAlbumComponent } from './components/my-album/my-album.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     HomeComponent,
     PhotoListComponent,
     SidePanelComponent,
-    NavBarComponent
+    NavBarComponent,
+    MyAlbumComponent,
+    LoginComponent
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [],
