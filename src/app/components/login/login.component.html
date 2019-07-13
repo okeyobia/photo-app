@@ -1,1 +1,54 @@
-<p>login works!</p>
+<div class="container">
+  <form
+    (ngSubmit)="onSubmit()"
+    [hidden]="loginService.checkLogin()"
+    #loginForm="ngForm"
+  >
+    <fieldset class="form-group row">
+      <legend class="col-form-legend col-sm-1-12">Login</legend>
+      <div class="col-sm-1-12"></div>
+    </fieldset>
+    <div class="form-group row">
+      <label for="inputName" class="mr-3 col-sm-1-12 col-form-label"
+        >Username:</label
+      >
+      <div class="col-sm-1-12">
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="credential.username"
+          name="username"
+          id="inputName"
+          placeholder="Enter username"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputPassword" class="mr-3 col-sm-1-12 col-form-label"
+        >Password:</label
+      >
+      <div class="col-sm-1-12">
+        <input
+          type="password"
+          [(ngModel)]="credential.password"
+          class="form-control"
+          name="password"
+          id="inputPassword"
+          placeholder="Enter Password"
+        />
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="offset-sm-2 col-sm-10">
+        <button type="submit" class="btn btn-danger">
+          Login
+        </button>
+      </div>
+    </div>
+  </form>
+  <div [hidden]="!loginService.checkLogin()">
+    <h3>Logged in Successfully!</h3>
+    <h3>Welcome back, {{ currentUsername }}!</h3>
+  </div>
+</div>

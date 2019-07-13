@@ -4,7 +4,7 @@ export class User {
   userId: number;
   firstName: string;
   lastName: string;
-  userName: string;
+  username: string;
   password: string;
   createdDate: Date;
   photoList: Photo[];

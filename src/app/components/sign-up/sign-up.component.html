@@ -1,0 +1,83 @@
+<div class="container">
+  <form *ngIf="!registered" (ngSubmit)="onSubmit()" #signUpForm="ngForm">
+    <h2>Sign Up</h2>
+    <div class="form-group">
+      <label for="inputFirstName">First Name</label>
+      <input
+        type="text"
+        required
+        class="form-control"
+        name="firstName"
+        [(ngModel)]="newUser.firstName"
+        id="inputFirstName"
+        aria-describedby="nameHelp"
+        placeholder="Enter first name"
+      />
+      <div
+        class="alert alert-danger"
+        *ngIf="signUpForm.touched && !signUpForm.valid"
+      >
+        First name is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputLastName">Last Name</label>
+      <input
+        type="text"
+        class="form-control"
+        required
+        name="lastName"
+        ngControl="lastName"
+        [(ngModel)]="newUser.lastName"
+        id="inputLastName"
+        placeholder="Enter last name"
+      />
+    </div>
+    <div class="form-group">
+      <label for="inputUsername">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        required
+        name="username"
+        placeholder="Username"
+        [(ngModel)]="newUser.username"
+        id="inputUsername"
+      />
+    </div>
+    <div class="form-group">
+      <label for="inputPassword">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        required
+        name="password"
+        [(ngModel)]="newUser.password"
+        id="inputPassword"
+        placeholder="Enter Password"
+      />
+    </div>
+    <div class="form-group">
+      <label for="inputPassword2">Password</label>
+      <input
+        required
+        class="form-control"
+        type="password"
+        name="password"
+        [(ngModel)]="newUser.password"
+        id="inputPassword2"
+        placeholder="Confirm Password"
+      />
+    </div>
+    <button
+      type="submit"
+      [disabled]="!signUpForm.valid"
+      class="btn btn-secondary"
+    >
+      Sign Up
+    </button>
+  </form>
+  <div *ngIf="registered">
+    <h1>Sign Up Successful!</h1>
+  </div>
+</div>
