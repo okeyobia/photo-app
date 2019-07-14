@@ -12,6 +12,7 @@ import { NavBarComponent } from "./components/nav-bar/nav-bar.component";
 import { MyAlbumComponent } from "./components/my-album/my-album.component";
 import { LoginComponent } from "./components/login/login.component";
 import { SignUpComponent } from "./components/sign-up/sign-up.component";
+import { AddPhotoComponent } from './components/add-photo/add-photo.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SignUpComponent } from "./components/sign-up/sign-up.component";
     NavBarComponent,
     MyAlbumComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    AddPhotoComponent
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule],
   providers: [],

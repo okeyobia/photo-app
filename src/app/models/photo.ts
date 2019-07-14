@@ -1,7 +1,7 @@
 import { User } from "./user";
 import { Comment } from "./comment";
 
-export interface Photo {
+export class Photo {
   photoId: string;
   photoName: string;
   title: string;

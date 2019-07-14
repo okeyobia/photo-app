@@ -12,7 +12,7 @@ import { UserService } from "src/app/service/user.service";
 })
 export class MyAlbumComponent implements OnInit {
   photos: Photo[];
-  user: User;
+  user;
   selectedPhoto: Photo;
   constructor(
     private photoService: PhotoService,
@@ -20,5 +20,27 @@ export class MyAlbumComponent implements OnInit {
     private userService: UserService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.userService
+      .getUserByName(localStorage.getItem("currentUsername"))
+      .subscribe(
+        user => {
+          this.user = Object.values(user).pop();
+          console.log("=======================pppp=========", this.user);
+          this.photoService.getPhotosByUser(this.user).subscribe(
+            photos => {
+              this.photos = Object.values(photos);
+              console.log(this.photos);
+            },
+            err => console.log(err, "errggggeeeg===fff")
+          );
+        },
+        error => console.log(error, "asdssgs++jhshshhshshs+dxhdh")
+      );
+  }
+
+  onSelect(photo: Photo) {
+    this.selectedPhoto = photo;
+    this.router.navigate(["/image-detail", this.selectedPhoto.photoId]);
+  }
 }

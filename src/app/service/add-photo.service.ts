@@ -1,23 +1,19 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { User } from "../models/user";
+import { Photo } from "../models/photo";
 
 @Injectable({
   providedIn: "root"
 })
-export class UserService {
-  user: User[];
+export class AddPhotoService {
   constructor(private http: HttpClient) {}
 
-  getUsers() {}
-  getUserById(userId: string) {}
-
-  getUserByName(username: string) {
-    const url = "http://localhost:8080/rest/user/username";
+  sendPhoto(photo: Photo) {
+    const url = "http://localhost:8080/rest/photo/add";
     const headers = new HttpHeaders({
       "Content-Type": "application/json",
       Authorization: "Bearer " + localStorage.getItem("token")
     });
-    return this.http.post(url, username, { headers });
+    return this.http.post(url, photo, { headers });
   }
 }
